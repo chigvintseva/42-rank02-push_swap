@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: achigvin <achigvin@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/19 16:58:06 by achigvin          #+#    #+#             */
-/*   Updated: 2025/09/19 17:29:28 by achigvin         ###   ########.fr       */
+/*   Created: 2025/05/22 18:09:09 by achigvin          #+#    #+#             */
+/*   Updated: 2025/05/22 18:09:10 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-#include <unistd.h>
-#include <stdlib.h>
-
-# define INT_MAX 2147483647
-# define INT_MIN -2147483648
-
-typedef struct	s_stack
+void	ft_putstr_fd(char *s, int fd)
 {
-	
-	struct s_stack	*next;
-	struct s_stack	*previous;
-}	t_stack;
+	size_t	i;
 
-#endif
+	if (!s)
+		return ;
+	i = 0;
+	while (s[i] != '\0')
+	{
+		ft_putchar_fd(s[i], fd);
+		i++;
+	}
+}

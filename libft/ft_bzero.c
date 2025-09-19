@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: achigvin <achigvin@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/19 16:58:06 by achigvin          #+#    #+#             */
-/*   Updated: 2025/09/19 17:29:28 by achigvin         ###   ########.fr       */
+/*   Created: 2025/05/15 17:42:59 by achigvin          #+#    #+#             */
+/*   Updated: 2025/05/15 17:43:00 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-#include <unistd.h>
-#include <stdlib.h>
-
-# define INT_MAX 2147483647
-# define INT_MIN -2147483648
-
-typedef struct	s_stack
+void	ft_bzero(void *s, size_t n)
 {
-	
-	struct s_stack	*next;
-	struct s_stack	*previous;
-}	t_stack;
+	unsigned char	*s1;
+	size_t			i;
 
-#endif
+	s1 = (unsigned char *)s;
+	i = 0;
+	while (i < n)
+	{
+		*s1 = '\0';
+		i++;
+		s1++;
+	}
+}

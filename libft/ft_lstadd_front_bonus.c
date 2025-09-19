@@ -1,29 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: achigvin <achigvin@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/19 16:58:06 by achigvin          #+#    #+#             */
-/*   Updated: 2025/09/19 17:29:28 by achigvin         ###   ########.fr       */
+/*   Created: 2025/05/24 18:59:57 by achigvin          #+#    #+#             */
+/*   Updated: 2025/05/24 18:59:58 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-#include <unistd.h>
-#include <stdlib.h>
-
-# define INT_MAX 2147483647
-# define INT_MIN -2147483648
-
-typedef struct	s_stack
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	
-	struct s_stack	*next;
-	struct s_stack	*previous;
-}	t_stack;
-
-#endif
+	if (!lst || !new)
+		return ;
+	new->next = *lst;
+	*lst = new;
+}

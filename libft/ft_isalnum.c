@@ -1,29 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: achigvin <achigvin@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/19 16:58:06 by achigvin          #+#    #+#             */
-/*   Updated: 2025/09/19 17:29:28 by achigvin         ###   ########.fr       */
+/*   Created: 2025/05/15 17:43:14 by achigvin          #+#    #+#             */
+/*   Updated: 2025/05/15 17:43:16 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-#include <unistd.h>
-#include <stdlib.h>
-
-# define INT_MAX 2147483647
-# define INT_MIN -2147483648
-
-typedef struct	s_stack
+int	ft_isalnum(int c)
 {
-	
-	struct s_stack	*next;
-	struct s_stack	*previous;
-}	t_stack;
-
-#endif
+	if (ft_isalpha(c) == 1 || ft_isdigit(c) == 1)
+		return (1);
+	return (0);
+}

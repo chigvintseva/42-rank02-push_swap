@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_strinput.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: achigvin <achigvin@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/19 16:58:06 by achigvin          #+#    #+#             */
-/*   Updated: 2025/09/19 17:29:28 by achigvin         ###   ########.fr       */
+/*   Created: 2025/05/30 18:55:24 by achigvin          #+#    #+#             */
+/*   Updated: 2025/05/30 18:55:25 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "../libft.h"
+#include "ft_printf.h"
 
-#include <unistd.h>
-#include <stdlib.h>
-
-# define INT_MAX 2147483647
-# define INT_MIN -2147483648
-
-typedef struct	s_stack
+int	ft_strinput(char *str)
 {
-	
-	struct s_stack	*next;
-	struct s_stack	*previous;
-}	t_stack;
+	char	*error_msg;
 
-#endif
+	error_msg = "(null)";
+	if (!str)
+	{
+		ft_putstr_fd(error_msg, 1);
+		return (ft_strlen(error_msg));
+	}
+	ft_putstr_fd(str, 1);
+	return (ft_strlen(str));
+}
