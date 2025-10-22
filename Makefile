@@ -1,3 +1,14 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2025/09/19 16:57:53 by achigvin          #+#    #+#              #
+#    Updated: 2025/09/19 17:32:59 by achigvin         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
 NAME = push_swap
 
@@ -8,7 +19,7 @@ CFLAGS = -Wall -Wextra -Werror
 
 # ---------
 
-SRC = 
+SRC = push_swap.c parse_input.c
 OBJ = $(addprefix $(OBJ_DIR)/,$(SRC:.c=.o))
 
 # -------- name rule --------
