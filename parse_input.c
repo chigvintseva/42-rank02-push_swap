@@ -50,7 +50,7 @@ t_stack	*parse_input(char **argv, t_stack *head)
 {
 	size_t	i;
 
-	i = 0;
+	i = 1;
 	while (argv[i] != NULL)
 	{
 		if (check_input(argv[i]) == -1)

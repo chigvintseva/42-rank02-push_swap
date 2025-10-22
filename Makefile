@@ -19,7 +19,7 @@ CFLAGS = -Wall -Wextra -Werror
 
 # ---------
 
-SRC = push_swap.c parse_input.c
+SRC = main.c push_swap.c parse_input.c
 OBJ = $(addprefix $(OBJ_DIR)/,$(SRC:.c=.o))
 
 # -------- name rule --------
