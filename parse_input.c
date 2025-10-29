@@ -6,7 +6,7 @@
 /*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/19 17:03:15 by achigvin          #+#    #+#             */
-/*   Updated: 2025/10/29 17:12:18 by achigvin         ###   ########.fr       */
+/*   Updated: 2025/10/29 18:00:30 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	contains_only_digits(char *argv)
 	while (argv[i])
 	{
 		if (argv[i] < '0' && argv[i] > '9')
-			return (-1);
+			return (1);
 		i++;
 	}
 	return (0);
@@ -37,26 +37,28 @@ int	check_input(char *argv)
 	while (argv[i] != '\0')
 	{
 		if (contains_only_digits(argv) == -1)
-			return (-1);
+			return (1);
 		number = ft_atol(argv[i]);
 		if (number > INT_MAX || number < INT_MIN)
-			return (-1);
+			return (1);
 		k++;
 	}
 	return (0);
 }
 
-t_stack	*parse_input(char **argv, t_stack *top)
+t_stack	*parse_input(char **argv, t_stack **top)
 {
 	size_t	i;
+	int		value;
 
 	i = 1;
 	while (argv[i] != NULL)
 	{
-		if (check_input(argv[i]) == -1)
-			return (NULL);
-
+		if (check_input(argv[i]) == 1)
+			return (free_stack(*top), NULL);
+		value = ft_atoi(argv[i]);
+		push_node(**top, value);
 		i++;
 	}
-	return (head);
+	return (**top);
 }

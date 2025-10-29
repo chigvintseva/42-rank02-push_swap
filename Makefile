@@ -6,7 +6,7 @@
 #    By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/19 16:57:53 by achigvin          #+#    #+#              #
-#    Updated: 2025/09/19 17:32:59 by achigvin         ###   ########.fr        #
+#    Updated: 2025/10/29 18:09:16 by achigvin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ CFLAGS = -Wall -Wextra -Werror
 
 # ---------
 
-SRC = main.c push_swap.c parse_input.c
+SRC = main.c stack_init_free.c push_swap.c parse_input.c
 OBJ = $(addprefix $(OBJ_DIR)/,$(SRC:.c=.o))
 
 # -------- name rule --------

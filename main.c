@@ -6,7 +6,7 @@
 /*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/19 16:58:01 by achigvin          #+#    #+#             */
-/*   Updated: 2025/10/29 16:35:05 by achigvin         ###   ########.fr       */
+/*   Updated: 2025/10/29 18:07:00 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,6 @@ int	main(int argc, char **argv)
 		return (write(2, "Error\n", 7), 0);
 	a = parse_input(argv, a);
 	if (!a)
-		return (write(2, "Error\n", 7), 0);
-	b = init_stack(NULL);
-	if (!b)
 		return (write(2, "Error\n", 7), 0);
 
 	// r pointers repeated in calls? like will they change aning or should i start sending double ptrs to not mess up with them?
