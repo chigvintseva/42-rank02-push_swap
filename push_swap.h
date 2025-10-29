@@ -6,7 +6,7 @@
 /*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/19 16:58:06 by achigvin          #+#    #+#             */
-/*   Updated: 2025/09/19 17:29:28 by achigvin         ###   ########.fr       */
+/*   Updated: 2025/10/29 16:32:05 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ typedef struct	s_stack
 {
 	int				value;
 	struct s_stack	*next;
-	struct s_stack	*previous;
 }	t_stack;
 
 #endif

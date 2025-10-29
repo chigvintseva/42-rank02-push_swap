@@ -6,7 +6,7 @@
 /*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/19 17:03:15 by achigvin          #+#    #+#             */
-/*   Updated: 2025/09/19 17:53:43 by achigvin         ###   ########.fr       */
+/*   Updated: 2025/10/29 17:12:18 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int	check_input(char *argv)
 	return (0);
 }
 
-t_stack	*parse_input(char **argv, t_stack *head)
+t_stack	*parse_input(char **argv, t_stack *top)
 {
 	size_t	i;
 
@@ -55,8 +55,7 @@ t_stack	*parse_input(char **argv, t_stack *head)
 	{
 		if (check_input(argv[i]) == -1)
 			return (NULL);
-		if (!(add_node(head, argv[i])))
-			return (free_stack(head), NULL);
+
 		i++;
 	}
 	return (head);
