@@ -36,7 +36,7 @@ int	check_input(char *argv)
 	i = 0;
 	while (argv[i] != '\0')
 	{
-		if (contains_only_digits(argv) == -1)
+		if (contains_only_digits(argv) == 1)
 			return (1);
 		number = ft_atol(argv[i]);
 		if (number > INT_MAX || number < INT_MIN)
@@ -55,10 +55,11 @@ t_stack	*parse_input(char **argv, t_stack **top)
 	while (argv[i] != NULL)
 	{
 		if (check_input(argv[i]) == 1)
-			return (free_stack(*top), NULL);
+			return (free_stack(top), NULL);
 		value = ft_atoi(argv[i]);
-		push_node(**top, value);
+		if (push_node(top, value) == 1)
+			return (free_stack(top), NULL);
 		i++;
 	}
-	return (**top);
+	return (*top);
 }

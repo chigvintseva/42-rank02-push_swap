@@ -26,31 +26,35 @@ t_stack	*init_node(int value)
 
 void	pop_node(t_stack **top)
 {
+	t_stack	*temp;
+
 	if (*top == NULL)
 		return ;
-	*top = **top->next;
-	free(*top);
+	temp = *top;
+	*top = (*top)->next;
+	free(temp);
 }
 
-void	push_node(t_stack **top, int value)
+int	push_node(t_stack **top, int value)
 {
 	t_stack	*new_node;
 
 	new_node = init_node(value);
 	if (!new_node)
-		return (NULL);
+		return (1);
 	new_node->next = *top;
 	*top = new_node;
+	return (0);
 }
 
 void	free_stack(t_stack **top)
 {
+	t_stack	*temp;
 
-	if (!(*top))
-		return ;
 	while (*top != NULL)
 	{
-		*top = **top->next;
-		free(**top);
+		temp = *top;
+		*top = (*top)->next;
+		free(temp);
 	}
 }

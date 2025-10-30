@@ -21,10 +21,11 @@ int	main(int argc, char **argv)
 	b = NULL;
 	if (argc == 1)
 		return (write(2, "Error\n", 7), 0);
-	a = parse_input(argv, a);
+	a = parse_input(argv, &a);
 	if (!a)
 		return (write(2, "Error\n", 7), 0);
 
 	// r pointers repeated in calls? like will they change aning or should i start sending double ptrs to not mess up with them?
+	free_stack(&a);
 	return (0);
 }
