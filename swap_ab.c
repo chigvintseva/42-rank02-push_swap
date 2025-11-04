@@ -6,7 +6,7 @@
 /*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 17:27:31 by achigvin          #+#    #+#             */
-/*   Updated: 2025/10/30 18:56:04 by achigvin         ###   ########.fr       */
+/*   Updated: 2025/11/04 14:24:40 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ void	sa(t_stack **a)
 	if (*a == NULL || (*a)->next == NULL)
 		return ;
 	old_node_1 = *a;
-	old_node_2 = **a;
-	node_3 = (**a)->next;
+	old_node_2 = old_node_1->next;
+	node_3 = old_node_2->next;
 	*a = old_node_2;
 	old_node_2->next = old_node_1;
 	old_node_1->next = node_3;
@@ -39,8 +39,8 @@ void	sb(t_stack **b);
 	if (*b == NULL || (*b)->next == NULL)
 		return ;
 	old_node_1 = *b;
-	old_node_2 = **b;
-	node_3 = (**b)->next;
+	old_node_2 = old_node_1->next;
+	node_3 = old_node_2->next;
 	*b = old_node_2;
 	old_node_2->next = old_node_1;
 	old_node_1->next = node_3;
