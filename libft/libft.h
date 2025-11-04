@@ -3,17 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-<<<<<<< HEAD
-/*   By: achigvin <achigvin@student.42berlin.d      +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/15 17:51:35 by achigvin          #+#    #+#             */
-/*   Updated: 2025/05/15 17:51:36 by achigvin         ###   ########.fr       */
-=======
 /*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 17:51:35 by achigvin          #+#    #+#             */
-/*   Updated: 2025/09/19 17:27:19 by achigvin         ###   ########.fr       */
->>>>>>> 21fdcefa4ec733bc303aea300b964457a3ebbf5f
+/*   Updated: 2025/11/04 16:32:40 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +30,7 @@ int		ft_isdigit(int c);
 int		ft_isalnum(int c);
 int		ft_isascii(int c);
 int		ft_isprint(int c);
-<<<<<<< HEAD
-=======
 long	ft_atol(const char *str);
->>>>>>> 21fdcefa4ec733bc303aea300b964457a3ebbf5f
 size_t	ft_strlen(const char *s);
 void	*ft_memset(void *s, int c, size_t n);
 void	ft_bzero(void *s, size_t n);

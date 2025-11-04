@@ -6,11 +6,11 @@
 /*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 17:27:41 by achigvin          #+#    #+#             */
-/*   Updated: 2025/11/04 15:57:00 by achigvin         ###   ########.fr       */
+/*   Updated: 2025/11/04 16:35:08 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.c"
+#include "push_swap.h"
 
 void	pa(t_stack **to_a, t_stack **to_b)
 {

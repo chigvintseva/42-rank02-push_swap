@@ -6,16 +6,16 @@
 /*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/19 17:42:10 by achigvin          #+#    #+#             */
-/*   Updated: 2025/11/04 14:35:17 by achigvin         ###   ########.fr       */
+/*   Updated: 2025/11/04 16:34:24 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.c"
+#include "push_swap.h"
 
 t_stack	*init_node(int value)
 {
 	t_stack	*new;
-	
+
 	new = (t_stack *)malloc(sizeof(t_stack));
 	if (!new)
 		return (NULL);

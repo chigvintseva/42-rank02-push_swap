@@ -6,11 +6,11 @@
 /*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 17:27:31 by achigvin          #+#    #+#             */
-/*   Updated: 2025/11/04 16:29:22 by achigvin         ###   ########.fr       */
+/*   Updated: 2025/11/04 16:34:53 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.c"
+#include "push_swap.h"
 
 void	swap_top2(t_stack **to_top)
 {

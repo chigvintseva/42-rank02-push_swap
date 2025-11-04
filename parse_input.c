@@ -6,7 +6,7 @@
 /*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/19 17:03:15 by achigvin          #+#    #+#             */
-/*   Updated: 2025/10/29 18:00:30 by achigvin         ###   ########.fr       */
+/*   Updated: 2025/11/04 16:33:28 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	contains_only_digits(char *argv)
 {
-	size_t = i;
+	size_t	i;
 
 	i = 0;
 	if (argv[i] == '-')
@@ -32,7 +32,7 @@ int	check_input(char *argv)
 {
 	size_t	i;
 	long	number;
-	
+
 	i = 0;
 	while (argv[i] != '\0')
 	{
