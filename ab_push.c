@@ -6,40 +6,36 @@
 /*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 17:27:41 by achigvin          #+#    #+#             */
-/*   Updated: 2025/11/04 14:36:44 by achigvin         ###   ########.fr       */
+/*   Updated: 2025/11/04 15:57:00 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.c"
 
-void	pa(t_stack *a, t_stack *b)
+void	pa(t_stack **to_a, t_stack **to_b)
 {
-	t_stack	*b_top_old;
-	t_stack	*a_top_old;
+	t_stack	*a_first_old;
 
-	if (b == NULL)
+	if (*to_b == NULL)
 		return ;
-	b_top_old = b;
-	a_top_old = a;
-	b = b->next;
-	a = b_top_old;
-	b_top_old->next = a_top_old->next;
+	a_first_old = *to_a;
+	*to_a = *to_b;
+	*to_b = (*to_a)->next;
+	(*to_a)->next = a_first_old;
 	ft_printf("pa\n");
 	return ;
 }
 
-void	pb(t_stack *a, t_stack *b)
+void	pb(t_stack **to_a, t_stack **to_b)
 {
-	t_stack	*a_top_old;
-	t_stack	*b_top_old;
+	t_stack	*b_first_old;
 
-	if (a == NULL)
+	if (*to_a == NULL)
 		return ;
-	a_top_old = a;
-	b_top_old = b;
-	b = a_top_old;
-	a_top_old->next = b_top_old->next;
-	a = a->next;
+	b_first_old = *to_b;
+	*to_b = *to_a;
+	*to_a = (*to_a)->next;
+	(*to_b)->next = b_first_old;
 	ft_printf("pb\n");
 	return ;
 }
