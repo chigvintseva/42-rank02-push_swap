@@ -29,8 +29,8 @@ t_stack	*init_node(int value);
 void	pop_node(t_stack **top);
 void	push_node(t_stack **top, int value);
 void	free_stack(t_stack **top);
-int	contains_only_digits(char *argv);
-int	check_input(char *argv);
+int		contains_only_digits(char *argv);
+int		check_input(char *argv);
 t_stack	*parse_input(char **argv, t_stack **top)
 
 #endif

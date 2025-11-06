@@ -14,7 +14,6 @@
 
 void	rotate(t_stack **to_top)
 {
-
 	if (*to_top == NULL || (*to_top)->next == NULL)
 		return ;
 
