@@ -25,7 +25,7 @@ int	main(int argc, char **argv)
 	if (!a)
 		return (write(2, "Error\n", 7), 0);
 
-	// r pointers repeated in calls? like will they change aning or should i start sending double ptrs to not mess up with them?
 	free_stack(&a);
+	free_stack(&b);
 	return (0);
 }

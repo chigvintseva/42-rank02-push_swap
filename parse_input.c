@@ -30,25 +30,25 @@ int	contains_only_digits(char *argv)
 
 int	check_input(char *argv)
 {
-	size_t	i;
 	long	number;
 
-	i = 0;
-	while (argv[i] != '\0')
-	{
-		if (contains_only_digits(argv) == 1)
-			return (1);
-		number = ft_atol(argv[i]);
-		if (number > INT_MAX || number < INT_MIN)
-			return (1);
-		k++;
-	}
+	if (contains_only_digits(argv) == 1)
+		return (1);
+	number = ft_atol(argv[i]);
+	if (number > INT_MAX || number < INT_MIN)
+		return (1);
 	return (0);
 }
 
-int	check_duplicates(t_stack **to_a)
+int	check_duplicates(t_stack *top_a, int number)
 {
-	
+	while (top_a != NULL)
+	{
+		if (top_a->value == number)
+			return (1);
+		top_a = top_a->next;
+	}
+	return (0);
 }
 
 t_stack	*parse_input(char **argv, t_stack **top)
