@@ -58,10 +58,3 @@ void	free_stack(t_stack **top)
 		free(temp);
 	}
 }
-
-t_stack	*find_prelast(t_stack *node)
-{
-	while (node->next->next != NULL)
-		node = node->next;
-	return (node);
-}

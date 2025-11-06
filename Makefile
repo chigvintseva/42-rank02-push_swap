@@ -19,7 +19,9 @@ CFLAGS = -Wall -Wextra -Werror
 
 # ---------
 
-SRC = main.c stack_init_free.c push_swap.c parse_input.c
+SRC = ab_push.c ab_reverse_rotate.c ab_rotate.c ab_swap.c \
+		main.c stack_init_free.c parse_input.c \
+		push_swap.c 
 OBJ = $(addprefix $(OBJ_DIR)/,$(SRC:.c=.o))
 
 # -------- name rule --------
