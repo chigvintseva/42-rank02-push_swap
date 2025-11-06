@@ -12,6 +12,7 @@
 
 #include "push_swap.h"
 
+void	reverse_rotate(**to_top)
 {
 	t_stack	*old_last;
 	t_stack	*old_pre_last;
@@ -20,6 +21,30 @@
 		return ;
 	old_pre_last = find_prelast(*top);
 	old_last = old_pre_last->next;
-	
+	old_pre_last->next = NULL;
+	old_last->next = *to_top;
+	*to_top = old_last;
+	return ;
+}
+
+void	rra(t_stack **to_a)
+{
+	reverse_rotate(to_a);
+	ft_printf("rra\n");
+	return ;
+}
+
+void	rrb(t_stack **to_b)
+{
+	reverse_rotate(to_b);
+	ft_printf("rrb\n");
+	return ;
+}
+
+void	rrr(t_stack **to_a, t_stack **to_b)
+{
+	reverse_rotate(to_a);
+	reverse_rotate(to_b);
+	ft_printf("rrr\n");
 	return ;
 }
