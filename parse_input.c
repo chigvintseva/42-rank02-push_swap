@@ -21,7 +21,7 @@ int	contains_only_digits(char *argv)
 		i++;
 	while (argv[i])
 	{
-		if (argv[i] < '0' && argv[i] > '9')
+		if (argv[i] < '0' || argv[i] > '9')
 			return (1);
 		i++;
 	}
