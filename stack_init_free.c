@@ -59,7 +59,7 @@ void	free_stack(t_stack **top)
 	}
 }
 
-t_stack	*pre_last_node(t_stack *node)
+t_stack	*find_prelast(t_stack *node)
 {
 	while (node->next->next != NULL)
 		node = node->next;

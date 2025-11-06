@@ -10,3 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
+
+{
+	t_stack	*old_last;
+	t_stack	*old_pre_last;
+
+	if (*to_top == NULL || (*to_top)->next == NULL)
+		return ;
+	old_pre_last = find_prelast(*top);
+	old_last = old_pre_last->next;
+	
+	return ;
+}

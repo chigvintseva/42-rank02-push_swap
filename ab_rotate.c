@@ -14,9 +14,16 @@
 
 void	rotate(t_stack **to_top)
 {
+	t_stack	*old_last;
+	t_stack	*old_first;
+
 	if (*to_top == NULL || (*to_top)->next == NULL)
 		return ;
-
+	old_last = (find_prelast(*to_top))->next;
+	old_first = *to_top;
+	*to_top = (*to_top)->next;
+	old_last->next = old_first;
+	old_first->next = NULL;
 	return ;
 }
 
