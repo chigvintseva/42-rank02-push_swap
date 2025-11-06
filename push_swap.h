@@ -44,7 +44,6 @@ void	sb(t_stack **b);
 void	ss(t_stack **a, t_stack **b);
 void	pa(t_stack **to_a, t_stack **to_b);
 void	pb(t_stack **to_a, t_stack **to_b);
-t_stack	*find_prelast(t_stack *node);
 void	rotate(t_stack **to_top);
 void	ra(t_stack **to_a);
 void	rb(t_stack **to_b);
