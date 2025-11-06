@@ -35,7 +35,7 @@ void	sa(t_stack **a)
 	return ;
 }
 
-void	sb(t_stack **b);
+void	sb(t_stack **b)
 {
 	if (*b == NULL || (*b)->next == NULL)
 		return ;

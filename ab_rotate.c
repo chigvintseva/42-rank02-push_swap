@@ -12,13 +12,6 @@
 
 #include "push_swap.h"
 
-t_stack	*find_prelast(t_stack *node)
-{
-	while (node->next->next != NULL)
-		node = node->next;
-	return (node);
-}
-
 void	rotate(t_stack **to_top)
 {
 	t_stack	*old_last;
@@ -26,11 +19,13 @@ void	rotate(t_stack **to_top)
 
 	if (*to_top == NULL || (*to_top)->next == NULL)
 		return ;
-	old_last = (find_prelast(*to_top))->next;
 	old_first = *to_top;
 	*to_top = (*to_top)->next;
-	old_last->next = old_first;
 	old_first->next = NULL;
+	old_last = *to_top;
+	while (old_last->next != NULL)
+		old_last = old_last->next;
+	old_last->next = old_first;
 	return ;
 }
 

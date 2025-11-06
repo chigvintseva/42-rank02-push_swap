@@ -12,7 +12,14 @@
 
 #include "push_swap.h"
 
-void	reverse_rotate(**to_top)
+t_stack	*find_prelast(t_stack *node)
+{
+	while (node->next->next != NULL)
+		node = node->next;
+	return (node);
+}
+
+void	reverse_rotate(t_stack **to_top)
 {
 	t_stack	*old_last;
 	t_stack	*old_pre_last;

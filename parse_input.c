@@ -46,6 +46,11 @@ int	check_input(char *argv)
 	return (0);
 }
 
+int	check_duplicates(t_stack **to_a)
+{
+	
+}
+
 t_stack	*parse_input(char **argv, t_stack **top)
 {
 	size_t	i;
