@@ -1,16 +1,15 @@
 
 #include "push_swap.h"
 
-t_stack	*find_min(t_stack *a)
+size_t	find_min(t_stack *a)
 {
-	t_stack	*node;
+	size_t	i;
+	int		number;
 
-	node = a;
+	number = a->value;
 	while (a->next != NULL)
 	{
-		if (node->value > node->next->value)
-			node = node->next;
-		a = a->next;
+		if (a->value < number)
+			number = 
 	}
-	return (node);
 }

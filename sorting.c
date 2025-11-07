@@ -23,12 +23,7 @@ void	sort_3(t_stack **a)
 
 }
 
-void	sort_4(t_stack **a)
-{
-
-}
-
-void	sort_5(t_stack **a)
+void	sort_4_5(t_stack **a)
 {
 
 }
@@ -44,11 +39,9 @@ void	sorting(t_stack **a, t_stack **b)
 		sort_2(a);
 	else if (length == 3)
 		sort_3(a);
-	else if (length == 4)
-		sort_4(a);
-	else if (length == 5)
-		sort_5(a);
+	else if (length == 5 || length == 4)
+		sort_4_5(a);
 	else
-		_sort(a, b);
+		turk_sort(a, b);
 	return ;
 }
