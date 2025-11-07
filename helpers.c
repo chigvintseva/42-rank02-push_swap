@@ -26,7 +26,11 @@ int	stack_is_sorted(t_stack *a)
 		index++;
 		a = a->next;
 	}
-	
+	if (a->next == NULL)
+		index++;
+	if (index == length)
+		return (1);
+	return (0);
 }
 
 int	find_min(t_stack *a)
