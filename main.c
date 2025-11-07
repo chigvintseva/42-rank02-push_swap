@@ -24,7 +24,7 @@ int	main(int argc, char **argv)
 	a = parse_input(argv, &a);
 	if (!a)
 		return (write(2, "Error\n", 7), 0);
-
+	sorting(&a, &b);
 	free_stack(&a);
 	free_stack(&b);
 	return (0);
