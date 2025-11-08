@@ -27,13 +27,23 @@ void	sort_3(t_stack **a)
 	first = (*a)->value;
 	second = (*a)->next->value;
 	third = (*a)->next->next->value;
-	if (first < second && second > third)
+	if (first < second && second > third && first > third)
+		rra(a);
+	else if (first < second && second > third && first < third)
 	{
 		ra(a);
 		ra(a);
 		sa(a);
 	}
-	
+	else if (first > second && second < third && third > first)
+		sa(a);
+	else if (first > second && second < third && first > third)
+		ra(a);
+	else if (first > second && second > third)
+	{
+		ra(a);
+		sa(a);
+	}
 }
 
 void	sort_4_5(t_stack **a)
