@@ -46,9 +46,38 @@ void	sort_3(t_stack **a)
 	}
 }
 
-void	sort_4_5(t_stack **a)
+void	sort_4(t_stack **a, t_stack **b)
 {
+	size_t	index_min;
+	size_t	i;
 
+	index = find_min_index(*a, find_min(*a));
+	i = 0;
+	while (i < index_min)
+	{
+		ra(a);
+		i++;
+	}
+	pb(a, b);
+	sort_3(a);
+	pa(a, b);
+}
+
+void	sort_5(t_stack **a, t_stack **b)
+{
+	size_t	index_min;
+	size_t	i;
+
+	index_min = find_min_index(*a, find_min(*a));
+	i = 0;
+	while (i < index_min)
+	{
+		ra(a);
+		i++;
+	}
+	pb(a);
+	sort_4(a, b);
+	pa(a);
 }
 
 void	sorting(t_stack **a, t_stack **b)
