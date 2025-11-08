@@ -36,41 +36,16 @@ void	sort_3(t_stack **a)
 
 void	sort_4(t_stack **a, t_stack **b)
 {
-	size_t	index_min;
-	size_t	i;
-
-	index_min = find_min_index(*a, find_min(*a));
-	i = 0;
-	while (i < index_min)
-	{
-		ra(a);
-		i++;
-	}
-	pb(a, b);
+	find_min_pb(a, b);
 	sort_3(a);
 	pa(a, b);
 }
 
 void	sort_5(t_stack **a, t_stack **b)
 {
-	size_t	i_min;
-	size_t	i;
-	int		k;
-
-	k = 0;
-	while (k < 2)
-	{
-		i_min = find_min_index(*a, find_min(*a));
-		i = 0;
-		while (i < i_min)
-		{
-			ra(a);
-			i++;
-		}
-		pb(a, b);
-		k++;
-	}
-	sort_3;
+	find_min_pb(a, b);
+	find_min_pb(a, b);
+	sort_3(a, b);
 	pa(a, b);
 	pa(a, b);
 }

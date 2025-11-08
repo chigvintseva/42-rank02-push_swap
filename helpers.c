@@ -64,3 +64,17 @@ size_t	find_min_index(t_stack *a, int min_value)
 	return (index);
 }
 
+void	find_min_pb(t_stack **a, t_stack **b)
+{
+	size_t	index_min;
+	size_t	i;
+
+	index_min = find_min_index(*a, find_min(*a));
+	i = 0;
+	while (i < index_min)
+	{
+		ra(a);
+		i++;
+	}
+	pb(a, b);
+}
