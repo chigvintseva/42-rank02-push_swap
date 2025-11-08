@@ -20,7 +20,20 @@ void	sort_2(t_stack **a)
 
 void	sort_3(t_stack **a)
 {
+	int	first;
+	int	second;
+	int	third;
 
+	first = (*a)->value;
+	second = (*a)->next->value;
+	third = (*a)->next->next->value;
+	if (first < second && second > third)
+	{
+		ra(a);
+		ra(a);
+		sa(a);
+	}
+	
 }
 
 void	sort_4_5(t_stack **a)
