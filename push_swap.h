@@ -25,32 +25,47 @@ typedef struct	s_stack
 	struct s_stack	*next;
 }	t_stack;
 
-// stack
-t_stack	*init_node(int value);
-void	pop_node(t_stack **top);
-void	push_node(t_stack **top, int value);
+// stack operations
 void	free_stack(t_stack **top);
+t_stack	*init_node(int value);
+int		push_node(t_stack **top, int value);
+void	pop_node(t_stack **top);
 
 // input
 int		contains_only_digits(char *argv);
-int		check_duplicates(t_stack **to_a);
 int		check_input(char *argv);
+int		check_duplicates(t_stack **to_a);
 t_stack	*parse_input(char **argv, t_stack **top);
 
-// helpers
-void	swap_top2(t_stack **to_top);
-void	sa(t_stack **a);
-void	sb(t_stack **b);
-void	ss(t_stack **a, t_stack **b);
+// instructions
 void	pa(t_stack **to_a, t_stack **to_b);
 void	pb(t_stack **to_a, t_stack **to_b);
+void	reverse_rotate(t_stack **to_top);
+void	rra(t_stack **to_a);
+void	rrb(t_stack **to_b);
+void	rrr(t_stack **to_a, t_stack **to_b);
 void	rotate(t_stack **to_top);
 void	ra(t_stack **to_a);
 void	rb(t_stack **to_b);
 void	rr(t_stack **to_a, t_stack **to_b);
-void	reverse_rotate(**to_top);
-void	rra(t_stack **to_a);
-void	rrb(t_stack **to_b);
-void	rrr(t_stack **to_a, t_stack **to_b)
+void	swap_top2(t_stack **to_top);
+void	sa(t_stack **a);
+void	sb(t_stack **b);
+void	ss(t_stack **a, t_stack **b);
+
+// helpers
+size_t	stack_length(t_stack *a);
+int		stack_is_sorted(t_stack *a);
+int		find_min(t_stack *a);
+size_t	find_min_index(t_stack *a, int min_value);
+void	find_min_pb(t_stack **a, t_stack **b);
+
+// sorts
+void	sort_2(t_stack **a);
+void	sort_3(t_stack **a);
+void	sort_4(t_stack **a, t_stack **b);
+void	sort_5(t_stack **a, t_stack **b);
+void	sorting(t_stack **a, t_stack **b);
+void	turk_sort(t_stack **a, t_stack **b)
 
 #endif
