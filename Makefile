@@ -14,8 +14,12 @@ NAME = push_swap
 
 LIBFT = libft/libft.a
 
-CC = cc
+CC = gcc
 CFLAGS = -Wall -Wextra -Werror
+INCLUDES = -Ilibft
+
+# add include flags to compilation
+CFLAGS += $(INCLUDES)
 
 # ---------
 OBJ_DIR = .obj
@@ -44,7 +48,7 @@ $(NAME): $(OBJ) $(LIBFT)
 $(OBJ_DIR):
 	mkdir -p $(OBJ_DIR)
 	
-$(OBJ_DIR)/%.o: %.c | $(OBJ_DIR)
+$(OBJ_DIR)/%.o: %.c | $(OBJ_DIR) $(LIBFT)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 # ------ libft compilation, -C flag is for "change directory to the subdirectory libft"
