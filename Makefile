@@ -18,6 +18,7 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
 # ---------
+OBJ_DIR = .obj
 
 SRC = ab_push.c \
 		ab_reverse_rotate.c \
