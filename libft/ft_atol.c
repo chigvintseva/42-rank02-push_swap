@@ -6,9 +6,11 @@
 /*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/19 17:26:32 by achigvin          #+#    #+#             */
-/*   Updated: 2025/09/19 17:27:09 by achigvin         ###   ########.fr       */
+/*   Updated: 2025/11/13 21:20:13 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 static int	ft_isspace(const char c)
 {
