@@ -67,6 +67,9 @@ void	sort_3(t_stack **a);
 void	sort_4(t_stack **a, t_stack **b);
 void	sort_5(t_stack **a, t_stack **b);
 void	sorting(t_stack **a, t_stack **b);
+int		find_target_value(t_stack *a, t_stack *b);
+size_t	find_index(t_stack *a, target);
+void	bring_to_top(t_stack **a);
 void	turk_sort(t_stack **a, t_stack **b)
 
 #endif
