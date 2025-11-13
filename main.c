@@ -12,6 +12,12 @@
 
 #include "push_swap.h"
 
+void	exit_error()
+{
+	write(2, "Error\n", 7);
+	exit(EXIT_FAILURE);
+}
+
 int	main(int argc, char **argv)
 {
 	t_stack	*a;
@@ -20,10 +26,10 @@ int	main(int argc, char **argv)
 	a = NULL;
 	b = NULL;
 	if (argc == 1)
-		return (write(2, "Error\n", 7), 0);
+		return (0);
 	a = parse_input(argv, &a);
 	if (!a)
-		return (write(2, "Error\n", 7), 0);
+		exit_error();
 	sorting(&a, &b);
 	free_stack(&a);
 	free_stack(&b);
