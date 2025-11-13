@@ -5,12 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/05/20 14:03:32 by achigvin          #+#    #+#              #
-<<<<<<< HEAD
-#    Updated: 2025/09/11 16:33:43 by achigvin         ###   ########.fr        #
-=======
-#    Updated: 2025/09/19 17:28:00 by achigvin         ###   ########.fr        #
->>>>>>> 21fdcefa4ec733bc303aea300b964457a3ebbf5f
+#    Created: 2025/11/13 19:20:27 by achigvin          #+#    #+#              #
+#    Updated: 2025/11/13 19:20:27 by achigvin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,11 +23,7 @@ SRC_LIBFT = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
             ft_strchr.c ft_strrchr.c ft_strncmp.c ft_memchr.c ft_memcmp.c ft_strnstr.c \
             ft_atoi.c ft_calloc.c ft_strdup.c ft_substr.c ft_strjoin.c ft_strtrim.c \
             ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c \
-<<<<<<< HEAD
-            ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
-=======
             ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_atol.c
->>>>>>> 21fdcefa4ec733bc303aea300b964457a3ebbf5f
 
 SRC_PRINTF = ft_printf/ft_printf.c ft_printf/ft_charinput.c \
              ft_printf/ft_strinput.c ft_printf/ft_intinput.c \
