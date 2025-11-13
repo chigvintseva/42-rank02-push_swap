@@ -15,9 +15,7 @@
 
 #include <unistd.h>
 #include <stdlib.h>
-
-# define INT_MAX 2147483647
-# define INT_MIN -2147483648
+#include <limits.h>
 
 typedef struct	s_stack
 {
@@ -68,7 +66,7 @@ void	sort_4(t_stack **a, t_stack **b);
 void	sort_5(t_stack **a, t_stack **b);
 void	sorting(t_stack **a, t_stack **b);
 int		find_target_value(t_stack *a, t_stack *b);
-size_t	find_index(t_stack *a, target);
+size_t	find_index(t_stack *a, int target);
 void	bring_to_top(t_stack **a);
 void	turk_sort(t_stack **a, t_stack **b)
 

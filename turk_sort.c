@@ -31,7 +31,7 @@ int	find_target_value(t_stack *a, t_stack *b)
 	return (target);
 }
 
-size_t	find_index(t_stack *a, target)
+size_t	find_index(t_stack *a, int target)
 {
 	size_t	index;
 
@@ -50,7 +50,7 @@ void	bring_to_top(t_stack **a)
 	size_t	length;
 
 	index = find_index(*a, target);
-	length = stack_length(a);
+	length = stack_length(*a);
 	if (cost <= (length / 2))
 	{
 		while (index-- > 0)
@@ -58,14 +58,14 @@ void	bring_to_top(t_stack **a)
 	}
 	else
 	{
-		while (index-- > 0)
+		while (index++ < length)
 			rra(a);
 	}
 }
 
 void	turk_sort(t_stack **a, t_stack **b)
 {
-	size_t	length
+	size_t	length;
 	int		target;
 	size_t	cost;
 
@@ -76,8 +76,8 @@ void	turk_sort(t_stack **a, t_stack **b)
 	length = stack_length(*b);
 	while (length-- > 1)
 	{
-		target = find_target_value(*a);
-		bring_to_top(a, b);
+		target = find_target_value(*a, *b);
+		bring_to_top(a, target);
 		pa(a, b);
 	}
 	return ;
