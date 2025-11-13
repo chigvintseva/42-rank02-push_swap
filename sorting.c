@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   sorting.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 15:35:44 by achigvin          #+#    #+#             */
-/*   Updated: 2025/11/04 16:32:10 by achigvin         ###   ########.fr       */
+/*   Updated: 2025/11/13 21:35:33 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	sorting(t_stack **a, t_stack **b)
 {
 	size_t	length;
 
-	length = stack_length(&a);
+	length = stack_length(*a);
 	if (length == 1)
 		return ;
 	else if (length == 2)

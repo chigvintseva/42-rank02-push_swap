@@ -6,7 +6,7 @@
 /*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/19 17:03:15 by achigvin          #+#    #+#             */
-/*   Updated: 2025/11/04 16:33:28 by achigvin         ###   ########.fr       */
+/*   Updated: 2025/11/13 21:34:24 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	check_input(char *argv)
 		return (1);
 	if (ft_strlen(argv) > 11)
 		return (1);
-	number = ft_atol(argv[i]);
+	number = ft_atol(argv);
 	if (number > INT_MAX || number < INT_MIN)
 		return (1);
 	return (0);

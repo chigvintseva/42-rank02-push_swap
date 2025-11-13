@@ -6,7 +6,7 @@
 /*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 17:33:56 by achigvin          #+#    #+#             */
-/*   Updated: 2025/11/13 17:33:56 by achigvin         ###   ########.fr       */
+/*   Updated: 2025/11/13 21:33:53 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	sort_5(t_stack **a, t_stack **b)
 {
 	find_min_pb(a, b);
 	find_min_pb(a, b);
-	sort_3(a, b);
+	sort_3(a);
 	pa(a, b);
 	pa(a, b);
 }

@@ -6,21 +6,19 @@
 #    By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/13 19:20:27 by achigvin          #+#    #+#              #
-#    Updated: 2025/11/13 19:20:27 by achigvin         ###   ########.fr        #
+#    Updated: 2025/11/13 21:29:03 by achigvin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-
-NAME = libft.a
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 AR = ar rcs
 
-# sources
+# Sources in libft and ft_printf directories
 SRC_LIBFT = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
             ft_strlen.c ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c \
-            ft_strlcpy.c ft_strlcat.c ft_toupper.c ft_tolower.c \
-            ft_strchr.c ft_strrchr.c ft_strncmp.c ft_memchr.c ft_memcmp.c ft_strnstr.c \
+            ft_strlcpy.c ft_strlcat.c ft_toupper.c ft_tolower.c ft_strchr.c \
+            ft_strrchr.c ft_strncmp.c ft_memchr.c ft_memcmp.c ft_strnstr.c \
             ft_atoi.c ft_calloc.c ft_strdup.c ft_substr.c ft_strjoin.c ft_strtrim.c \
             ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c \
             ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_atol.c
@@ -35,26 +33,38 @@ SRC = $(SRC_LIBFT) $(SRC_PRINTF)
 
 OBJ_DIR = objects
 OBJ = $(addprefix $(OBJ_DIR)/,$(SRC:.c=.o))
+
+# Default target to create the library
 all: $(NAME)
 
+# Creating the library with the object files
 $(NAME): $(OBJ)
-	$(AR) $@ $?
+	$(AR) rcs $@ $?
 
+# Create the object directory if it doesn't exist
 $(OBJ_DIR):
 	mkdir -p $(OBJ_DIR)/ft_printf
 
-$(OBJ_DIR)/%.o: %.c | $(OBJ_DIR)
+# Rule to compile the .c files to .o files in libft/
+$(OBJ_DIR)/%.o: libft/%.c | $(OBJ_DIR)
+	@echo "Compiling $<"
 	$(CC) $(CFLAGS) -c $< -o $@
 
-clean:
-	rm -f $(OBJ)
+# Rule to compile the .c files to .o files in ft_printf/
+$(OBJ_DIR)/%.o: ft_printf/%.c | $(OBJ_DIR)
+	@echo "Compiling $<"
+	$(CC) $(CFLAGS) -c $< -o $@
 
+# Clean up the object files
+clean:
+	rm -rf $(OBJ)
+
+# Remove the library and clean up
 fclean: clean
 	rm -f $(NAME)
 	rm -rf $(OBJ_DIR)
 
+# Rebuild everything
 re: fclean all
 
 .PHONY: all clean fclean re
-
--include $(DEP)

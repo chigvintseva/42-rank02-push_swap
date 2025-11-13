@@ -6,13 +6,14 @@
 /*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/19 16:58:06 by achigvin          #+#    #+#             */
-/*   Updated: 2025/10/29 18:08:54 by achigvin         ###   ########.fr       */
+/*   Updated: 2025/11/13 21:37:00 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
+#include "libft/libft.h"
 #include <unistd.h>
 #include <stdlib.h>
 #include <limits.h>
@@ -33,7 +34,7 @@ void	pop_node(t_stack **top);
 // input
 int		contains_only_digits(char *argv);
 int		check_input(char *argv);
-int		check_duplicates(t_stack **to_a);
+int		check_duplicates(t_stack *top_a, int number);
 t_stack	*parse_input(char **argv, t_stack **top);
 
 // instructions
@@ -67,7 +68,7 @@ void	sort_5(t_stack **a, t_stack **b);
 void	sorting(t_stack **a, t_stack **b);
 int		find_target_value(t_stack *a, t_stack *b);
 size_t	find_index(t_stack *a, int target);
-void	bring_to_top(t_stack **a);
-void	turk_sort(t_stack **a, t_stack **b)
+void	bring_to_top(t_stack **a, int target);
+void	turk_sort(t_stack **a, t_stack **b);
 
 #endif

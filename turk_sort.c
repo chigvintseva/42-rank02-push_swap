@@ -6,7 +6,7 @@
 /*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 17:42:09 by achigvin          #+#    #+#             */
-/*   Updated: 2025/11/13 17:42:09 by achigvin         ###   ########.fr       */
+/*   Updated: 2025/11/13 21:37:15 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,14 +43,14 @@ size_t	find_index(t_stack *a, int target)
 	return (index);
 }
 
-void	bring_to_top(t_stack **a)
+void	bring_to_top(t_stack **a, int target)
 {
 	size_t	index;
 	size_t	length;
 
 	index = find_index(*a, target);
 	length = stack_length(*a);
-	if (cost <= (length / 2))
+	if (index <= (length / 2))
 	{
 		while (index-- > 0)
 			ra(a);
@@ -66,7 +66,6 @@ void	turk_sort(t_stack **a, t_stack **b)
 {
 	size_t	length;
 	int		target;
-	size_t	cost;
 
 	length = stack_length(*a);
 	while (length-- > 3)
