@@ -34,6 +34,8 @@ int	check_input(char *argv)
 
 	if (contains_only_digits(argv) == 1)
 		return (1);
+	if (ft_strlen(argv) > 11)
+		return (1);
 	number = ft_atol(argv[i]);
 	if (number > INT_MAX || number < INT_MIN)
 		return (1);
