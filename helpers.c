@@ -6,7 +6,7 @@
 /*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 17:42:07 by achigvin          #+#    #+#             */
-/*   Updated: 2025/11/13 17:42:07 by achigvin         ###   ########.fr       */
+/*   Updated: 2025/11/14 18:21:40 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,21 +28,13 @@ size_t	stack_length(t_stack *a)
 
 int	stack_is_sorted(t_stack *a)
 {
-	size_t	index;
-	size_t	length;
-
-	length = stack_length(a);
-	index = 0;
-	while (a->next != NULL && (a->value < a->next->value))
+	while (a && a->next)
 	{
-		index++;
+		if (a->value > a->next->value)
+			return (0);
 		a = a->next;
 	}
-	if (a->next == NULL)
-		index++;
-	if (index == length)
-		return (1);
-	return (0);
+	return (1);
 }
 
 int	find_min(t_stack *a)
@@ -80,10 +72,11 @@ void	find_min_pb(t_stack **a, t_stack **b)
 {
 	size_t	index_min;
 	size_t	i;
-
-	index_min = find_min_index(*a, find_min(*a));
+	int		min_value;
+	
+	min_value = find_min(*a);
+	index_min = find_min_index(*a, min_value);
 	i = 0;
-	ft_printf("index of min is: %d\n", index_min);
 	while (i < index_min)
 	{
 		ra(a);
