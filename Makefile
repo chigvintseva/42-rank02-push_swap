@@ -16,13 +16,8 @@ LIBFT = libft/libft.a
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-INCLUDES = -Ilibft
-
-# add include flags to compilation
-CFLAGS += $(INCLUDES)
 
 # ---------
-OBJ_DIR = .obj
 
 SRC = ab_push.c \
 		ab_reverse_rotate.c \
@@ -36,19 +31,21 @@ SRC = ab_push.c \
 		stack_operations.c \
 		turk_sort.c
 
+
+OBJ_DIR = objects_push_swap
 OBJ = $(addprefix $(OBJ_DIR)/,$(SRC:.c=.o))
 
 # -------- name rule --------
 all: $(NAME)
 
-# --------- client-----------
+# --------- main compilation-----------
 $(NAME): $(OBJ) $(LIBFT)
 	$(CC) $(CFLAGS) $(OBJ) $(LIBFT) -o $@
 
 $(OBJ_DIR):
 	mkdir -p $(OBJ_DIR)
 	
-$(OBJ_DIR)/%.o: %.c | $(OBJ_DIR) $(LIBFT)
+$(OBJ_DIR)/%.o: %.c | $(OBJ_DIR)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 # ------ libft compilation, -C flag is for "change directory to the subdirectory libft"
@@ -69,3 +66,5 @@ re: fclean all
 
 # -------------------
 .PHONY: all clean fclean re
+
+-include $(DEP)
