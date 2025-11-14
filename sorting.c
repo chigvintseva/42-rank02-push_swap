@@ -17,7 +17,7 @@ void	sorting(t_stack **a, t_stack **b)
 	size_t	length;
 
 	length = stack_length(*a);
-	if (length == 1)
+	if (length == 1 || stack_is_sorted(*a))
 		return ;
 	else if (length == 2)
 		sort_2(a);

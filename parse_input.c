@@ -60,13 +60,16 @@ t_stack	*parse_input(char **argv, t_stack **top)
 
 	i = 1;
 	while (argv[i] != NULL)
+		i++;
+	i--;
+	while (i > 0)
 	{
 		if (check_input(argv[i]) == 1)
 			return (free_stack(top), NULL);
 		value = ft_atoi(argv[i]);
 		if (push_node(top, value) == 1)
 			return (free_stack(top), NULL);
-		i++;
+		i--;
 	}
 	return (*top);
 }
