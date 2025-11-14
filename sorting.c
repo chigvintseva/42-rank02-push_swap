@@ -16,7 +16,6 @@ int	check_top2(t_stack **a, size_t length)
 {
 	t_stack	*top;
 
-	ft_printf("sort check 2\n");
 	if (length < 3)
 		return (0);
 	top = *a;

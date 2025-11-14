@@ -14,7 +14,6 @@
 
 void	sort_2(t_stack **a)
 {
-		ft_printf("sort 2\n");
 	if ((*a)->value > ((*a)->next->value))
 		sa(a);
 }
@@ -25,7 +24,6 @@ void	sort_3(t_stack **a)
 	int	v2;
 	int	v3;
 
-		ft_printf("sort 3\n");
 	v1 = (*a)->value;
 	v2 = (*a)->next->value;
 	v3 = (*a)->next->next->value;
@@ -49,7 +47,6 @@ void	sort_3(t_stack **a)
 
 void	sort_4(t_stack **a, t_stack **b)
 {
-		ft_printf("sort 4\n");
 	find_min_pb(a, b);
 	sort_3(a);
 	pa(a, b);
@@ -57,7 +54,6 @@ void	sort_4(t_stack **a, t_stack **b)
 
 void	sort_5(t_stack **a, t_stack **b)
 {
-	ft_printf("sort 5\n");
 	find_min_pb(a, b);
 	find_min_pb(a, b);
 	sort_3(a);
