@@ -36,6 +36,8 @@ int	check_input(char *argv)
 		return (1);
 	if (ft_strlen(argv) > 11)
 		return (1);
+	if (ft_strncmp(argv, "-", ft_strlen(argv)) != 0)
+	 	return (1);
 	number = ft_atol(argv);
 	if (number > INT_MAX || number < INT_MIN)
 		return (1);
