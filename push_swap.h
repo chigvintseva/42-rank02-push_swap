@@ -61,10 +61,9 @@ size_t	find_min_index(t_stack *a, int min_value);
 void	find_min_pb(t_stack **a, t_stack **b);
 
 // sorts
+int	check_top2(t_stack **a, size_t length);
 void	sort_2(t_stack **a);
 void	sort_3(t_stack **a);
-void	sort_4(t_stack **a, t_stack **b);
-void	sort_5(t_stack **a, t_stack **b);
 void	sorting(t_stack **a, t_stack **b);
 int		find_target_value(t_stack *a, t_stack *b);
 size_t	find_index(t_stack *a, int target);

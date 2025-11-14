@@ -44,19 +44,3 @@ void	sort_3(t_stack **a)
 		sa(a);
 	}
 }
-
-void	sort_4(t_stack **a, t_stack **b)
-{
-	find_min_pb(a, b);
-	sort_3(a);
-	pa(a, b);
-}
-
-void	sort_5(t_stack **a, t_stack **b)
-{
-	find_min_pb(a, b);
-	find_min_pb(a, b);
-	sort_3(a);
-	pa(a, b);
-	pa(a, b);
-}
