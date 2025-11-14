@@ -12,10 +12,12 @@
 
 #include "push_swap.h"
 
-int	check_top2(t_stack **a)
+int	check_top2(t_stack **a, size_t length)
 {
 	t_stack	*top;
 
+	if (length < 6)
+		return (0);
 	top = *a;
 	top = top->next->next;
 	if (!stack_is_sorted(top))
@@ -31,7 +33,7 @@ void	sorting(t_stack **a, t_stack **b)
 	size_t	length;
 
 	length = stack_length(*a);
-	if (length == 1 || stack_is_sorted(*a) || check_top2(a))
+	if (length == 1 || stack_is_sorted(*a) || check_top2(a, length))
 		return ;
 	if (length > 5)
 		turk_sort(a, b);
