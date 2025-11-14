@@ -12,18 +12,29 @@
 
 #include "push_swap.h"
 
+int	check_top2(t_stack **a)
+{
+	t_stack	*top;
+
+	top = *a;
+	top = top->next->next;
+	if (!stack_is_sorted(top))
+		return (0);
+	sort_2(a);
+	if (stack_is_sorted(*a))
+		return (1);
+	return (0);
+}
+
 void	sorting(t_stack **a, t_stack **b)
 {
 	size_t	length;
 
 	length = stack_length(*a);
-	if (length == 1)
+	if (length == 1 || stack_is_sorted(*a) || check_top2(a))
 		return ;
 	if (length > 5)
 		turk_sort(a, b);
-	sort_2(a);
-	if (stack_is_sorted(*a))
-		return ;
 	else if (length == 2)
 		sort_2(a);
 	else if (length == 3)
