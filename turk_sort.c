@@ -68,15 +68,16 @@ void	turk_sort(t_stack **a, t_stack **b)
 	int		target;
 
 	length = stack_length(*a);
-	while (length-- > 3)
+	while (length-- > 5)
 		pb(a, b);
-	sort_3(a);
+	sort_5(a, b);
 	length = stack_length(*b);
-	while (length-- > 1)
+	while (length-- > 0)
 	{
 		target = find_target_value(*a, *b);
 		bring_to_top(a, target);
 		pa(a, b);
 	}
+	bring_to_top(a, find_min(*a));
 	return ;
 }

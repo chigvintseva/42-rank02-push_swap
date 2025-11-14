@@ -17,10 +17,12 @@ void	sorting(t_stack **a, t_stack **b)
 	size_t	length;
 
 	length = stack_length(*a);
+	if (length == 1)
+		return ;
 	if (length > 5)
 		turk_sort(a, b);
 	sort_2(a);
-	if (length == 1 || stack_is_sorted(*a))
+	if (stack_is_sorted(*a))
 		return ;
 	else if (length == 2)
 		sort_2(a);
