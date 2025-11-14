@@ -43,6 +43,16 @@ size_t	find_index(t_stack *a, int target)
 	return (index);
 }
 
+void	ft_print_output2(t_stack *a)
+{
+	while (a != NULL)
+	{
+		ft_printf("%d ", a->value);
+		a = a->next;
+	}
+	ft_printf("\n");
+}
+
 void	bring_to_top(t_stack **a, int target)
 {
 	size_t	index;
@@ -60,6 +70,8 @@ void	bring_to_top(t_stack **a, int target)
 		while (index++ < length)
 			rra(a);
 	}
+	ft_printf("after brinf to the top: ");
+	ft_print_output2(*a);
 }
 
 void	turk_sort(t_stack **a, t_stack **b)
@@ -67,10 +79,11 @@ void	turk_sort(t_stack **a, t_stack **b)
 	size_t	length;
 	int		target;
 
+	ft_printf("sort turk\n");
 	length = stack_length(*a);
-	while (length-- > 5)
+	while (length-- > 3)
 		pb(a, b);
-	sort_5(a, b);
+	sort_3(a);
 	length = stack_length(*b);
 	while (length-- > 0)
 	{

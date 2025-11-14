@@ -16,7 +16,8 @@ int	check_top2(t_stack **a, size_t length)
 {
 	t_stack	*top;
 
-	if (length < 6)
+	ft_printf("sort check 2\n");
+	if (length < 3)
 		return (0);
 	top = *a;
 	top = top->next->next;
@@ -35,9 +36,7 @@ void	sorting(t_stack **a, t_stack **b)
 	length = stack_length(*a);
 	if (length == 1 || stack_is_sorted(*a) || check_top2(a, length))
 		return ;
-	if (length > 5)
-		turk_sort(a, b);
-	else if (length == 2)
+	if (length == 2)
 		sort_2(a);
 	else if (length == 3)
 		sort_3(a);
@@ -45,5 +44,7 @@ void	sorting(t_stack **a, t_stack **b)
 		sort_4(a, b);
 	else if (length == 5)
 		sort_5(a, b);
+	else if (length > 5)
+		turk_sort(a, b);
 	return ;
 }

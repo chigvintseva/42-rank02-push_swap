@@ -18,6 +18,16 @@ void	exit_error()
 	exit(EXIT_FAILURE);
 }
 
+void	ft_print_output(t_stack *a)
+{
+	while (a != NULL)
+	{
+		ft_printf("%d ", a->value);
+		a = a->next;
+	}
+	ft_printf("\n");
+}
+
 int	main(int argc, char **argv)
 {
 	t_stack	*a;
@@ -31,6 +41,8 @@ int	main(int argc, char **argv)
 	if (!a)
 		exit_error();
 	sorting(&a, &b);
+	ft_print_output(a);
+
 	free_stack(&a);
 	free_stack(&b);
 	return (0);
