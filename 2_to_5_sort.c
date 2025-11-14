@@ -47,6 +47,9 @@ void	sort_3(t_stack **a)
 
 void	sort_4(t_stack **a, t_stack **b)
 {
+	sort_2(a);
+	if (stack_is_sorted(*a))
+		return ;
 	find_min_pb(a, b);
 	sort_3(a);
 	pa(a, b);
@@ -54,6 +57,9 @@ void	sort_4(t_stack **a, t_stack **b)
 
 void	sort_5(t_stack **a, t_stack **b)
 {
+	sort_2(a);
+	if (stack_is_sorted(*a))
+		return ;
 	find_min_pb(a, b);
 	find_min_pb(a, b);
 	sort_3(a);

@@ -17,6 +17,9 @@ void	sorting(t_stack **a, t_stack **b)
 	size_t	length;
 
 	length = stack_length(*a);
+	if (length > 5)
+		turk_sort(a, b);
+	sort_2(a);
 	if (length == 1 || stack_is_sorted(*a))
 		return ;
 	else if (length == 2)
@@ -27,7 +30,5 @@ void	sorting(t_stack **a, t_stack **b)
 		sort_4(a, b);
 	else if (length == 5)
 		sort_5(a, b);
-	else
-		turk_sort(a, b);
 	return ;
 }
