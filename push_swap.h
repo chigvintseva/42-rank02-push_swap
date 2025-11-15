@@ -6,7 +6,7 @@
 /*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/19 16:58:06 by achigvin          #+#    #+#             */
-/*   Updated: 2025/11/15 14:12:02 by achigvin         ###   ########.fr       */
+/*   Updated: 2025/11/15 14:47:17 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ int		contains_only_digits(char *argv);
 int		check_input(char *argv);
 int		check_duplicates(t_stack *top_a, int number);
 t_stack	*parse_input(char **argv, t_stack **top);
+t_stack	*parse_string(char *arg, t_stack **top);
+void	free_split(char **split);
 void	pa(t_stack **to_a, t_stack **to_b);
 void	pb(t_stack **to_a, t_stack **to_b);
 void	reverse_rotate(t_stack **to_top);

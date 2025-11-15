@@ -6,7 +6,7 @@
 #    By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/19 16:57:53 by achigvin          #+#    #+#              #
-#    Updated: 2025/10/29 18:09:16 by achigvin         ###   ########.fr        #
+#    Updated: 2025/11/15 14:47:50 by achigvin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,8 @@ SRC = ab_push.c \
 		sorting.c \
 		sorting_2_3.c \
 		stack_operations.c \
-		turk_sort.c
+		turk_sort.c \
+		parse_string.c
 
 
 OBJ_DIR = objects_push_swap

@@ -6,7 +6,7 @@
 /*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/19 16:58:01 by achigvin          #+#    #+#             */
-/*   Updated: 2025/11/15 14:10:56 by achigvin         ###   ########.fr       */
+/*   Updated: 2025/11/15 14:39:30 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,10 @@ int	main(int argc, char **argv)
 	b = NULL;
 	if (argc == 1)
 		return (0);
-	a = parse_input(argv, &a);
+	if (argc == 2)
+		a = parse_string(argv[1], &a);
+	else
+		a = parse_input(argv, &a);
 	if (!a)
 		exit_clean_error(&a, &b);
 	sorting(&a, &b);
