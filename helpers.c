@@ -17,6 +17,8 @@ size_t	stack_length(t_stack *a)
 {
 	size_t	i;
 
+	if (!a)
+		return (0);
 	i = 1;
 	while (a->next != NULL)
 	{
@@ -28,6 +30,8 @@ size_t	stack_length(t_stack *a)
 
 int	stack_is_sorted(t_stack *a)
 {
+	if (!a)
+		exit_error();
 	while (a && a->next)
 	{
 		if (a->value > a->next->value)
@@ -41,6 +45,8 @@ int	find_min(t_stack *a)
 {
 	int	number;
 
+	if (!a)
+		exit_error();
 	number = a->value;
 	while (a->next != NULL)
 	{
@@ -57,15 +63,15 @@ size_t	find_min_index(t_stack *a, int min_value)
 {
 	size_t	index;
 
+	if (!a)
+		exit_error();
 	index = 0;
-	while (a->value != min_value && a->next != NULL)
+	while (a && (a->value != min_value))
 	{
 		index++;
 		a = a->next;
 	}
-	if (a->next == NULL && a->value == min_value)
-		index++;
-	return (index - 1);
+	return (index);
 }
 
 void	find_min_pb(t_stack **a, t_stack **b)

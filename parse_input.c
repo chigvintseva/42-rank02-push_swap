@@ -20,39 +20,28 @@ int	contains_only_digits(char *argv)
 	if (argv[i] == '-' || argv[i] == '+')
 		i++;
 	if (!argv[i])
-		return (1);
+		return (0);
 	while (argv[i])
 	{
 		if (argv[i] < '0' || argv[i] > '9')
-			return (1);
+			return (0);
 		i++;
 	}
-	return (0);
+	return (1);
 }
 
 int	check_input(char *argv)
 {
 	long	number;
 
-	if (contains_only_digits(argv) == 1)
-		return (1);
+	if (contains_only_digits(argv) == 0)
+		return (0);
 	if (ft_strlen(argv) > 11)
-		return (1);
+		return (0);
 	number = ft_atol(argv);
 	if (number > INT_MAX || number < INT_MIN)
-		return (1);
-	return (0);
-}
-
-int	check_duplicates(t_stack *top_a, int number)
-{
-	while (top_a != NULL)
-	{
-		if (top_a->value == number)
-			return (1);
-		top_a = top_a->next;
-	}
-	return (0);
+		return (0);
+	return (1);
 }
 
 t_stack	*parse_input(char **argv, t_stack **top)
@@ -66,10 +55,10 @@ t_stack	*parse_input(char **argv, t_stack **top)
 	i--;
 	while (i > 0)
 	{
-		if (check_input(argv[i]) == 1)
+		if (check_input(argv[i]) == 0)
 			return (free_stack(top), NULL);
 		value = ft_atoi(argv[i]);
-		if (push_node(top, value) == 1)
+		if (push_node(top, value) == 0)
 			return (free_stack(top), NULL);
 		i--;
 	}
