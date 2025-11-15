@@ -6,13 +6,13 @@
 /*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/19 16:58:01 by achigvin          #+#    #+#             */
-/*   Updated: 2025/11/15 14:06:50 by achigvin         ###   ########.fr       */
+/*   Updated: 2025/11/15 14:10:56 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	exit_error()
+void	exit_error(void)
 {
 	write(2, "Error\n", 6);
 	exit(EXIT_FAILURE);

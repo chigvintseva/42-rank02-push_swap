@@ -6,7 +6,7 @@
 /*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 17:42:09 by achigvin          #+#    #+#             */
-/*   Updated: 2025/11/14 18:28:04 by achigvin         ###   ########.fr       */
+/*   Updated: 2025/11/15 14:12:48 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	find_target_value(t_stack *a, t_stack *b)
 	t_stack	*temp;
 
 	if (!a || !b)
-    	exit_clean_error(&a, &b);
+		exit_clean_error(&a, &b);
 	temp = a;
 	target = INT_MAX;
 	b_value = b->value;

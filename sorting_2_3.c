@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   2_to_5_sort.c                                      :+:      :+:    :+:   */
+/*   sorting_2_3.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 17:33:56 by achigvin          #+#    #+#             */
-/*   Updated: 2025/11/13 21:33:53 by achigvin         ###   ########.fr       */
+/*   Updated: 2025/11/15 14:12:36 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	sort_2(t_stack **a)
 {
 	if (!a || !*a || !(*a)->next)
-		return;
+		return ;
 	if ((*a)->value > ((*a)->next->value))
 		sa(a);
 }
@@ -27,7 +27,7 @@ void	sort_3(t_stack **a)
 	int	v3;
 
 	if (!a || !*a || !(*a)->next || !(*a)->next->next)
-    	return;
+		return ;
 	v1 = (*a)->value;
 	v2 = (*a)->next->value;
 	v3 = (*a)->next->next->value;

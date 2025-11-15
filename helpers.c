@@ -6,10 +6,9 @@
 /*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 17:42:07 by achigvin          #+#    #+#             */
-/*   Updated: 2025/11/14 18:21:40 by achigvin         ###   ########.fr       */
+/*   Updated: 2025/11/15 14:10:47 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "push_swap.h"
 
@@ -75,9 +74,9 @@ void	find_min_pb(t_stack **a, t_stack **b)
 	size_t	index_min;
 	size_t	i;
 	int		min_value;
-	
+
 	if (!a || !*a)
-    	return;
+		return ;
 	min_value = find_min(*a);
 	index_min = find_min_index(*a, min_value);
 	i = 0;
