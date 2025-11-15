@@ -14,6 +14,8 @@
 
 void	sort_2(t_stack **a)
 {
+	if (!a || !*a || !(*a)->next)
+		return;
 	if ((*a)->value > ((*a)->next->value))
 		sa(a);
 }
@@ -24,6 +26,8 @@ void	sort_3(t_stack **a)
 	int	v2;
 	int	v3;
 
+	if (!a || !*a || !(*a)->next || !(*a)->next->next)
+    	return;
 	v1 = (*a)->value;
 	v2 = (*a)->next->value;
 	v3 = (*a)->next->next->value;

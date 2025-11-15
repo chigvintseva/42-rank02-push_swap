@@ -16,6 +16,8 @@ void	free_stack(t_stack **top)
 {
 	t_stack	*temp;
 
+	if (!top)
+		return ;
 	while (*top != NULL)
 	{
 		temp = *top;

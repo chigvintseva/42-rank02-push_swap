@@ -18,6 +18,8 @@ void	swap_top2(t_stack **to_top)
 	t_stack	*old_node_2;
 	t_stack	*node_3;
 
+	if (!to_top || !*to_top || !(*to_top)->next)
+    	return;
 	old_node_1 = *to_top;
 	old_node_2 = old_node_1->next;
 	node_3 = old_node_2->next;
@@ -44,13 +46,20 @@ void	sb(t_stack **b)
 	return ;
 }
 
-void	ss(t_stack **a, t_stack **b)
+void ss(t_stack **a, t_stack **b)
 {
-	if (*a == NULL || (*a)->next == NULL 
-		|| *b == NULL || (*b)->next == NULL)
-		return ;
-	swap_top2(a);
-	swap_top2(b);
-	ft_printf("ss\n");
-	return ;
+    int did_anything = 0;
+
+    if (a && *a && (*a)->next)
+    {
+        swap_top2(a);
+        did_anything = 1;
+    }
+    if (b && *b && (*b)->next)
+    {
+        swap_top2(b);
+        did_anything = 1;
+    }
+    if (did_anything)
+        ft_printf("ss\n");
 }

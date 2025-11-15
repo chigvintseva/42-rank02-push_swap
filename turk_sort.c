@@ -18,6 +18,8 @@ int	find_target_value(t_stack *a, t_stack *b)
 	int		b_value;
 	t_stack	*temp;
 
+	if (!a || !b)
+    	exit_clean_error(&a, &b);
 	temp = a;
 	target = INT_MAX;
 	b_value = b->value;

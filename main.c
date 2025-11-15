@@ -12,14 +12,19 @@
 
 #include "push_swap.h"
 
-void	exit_error(t_stack **a, t_stack **b)
+void	exit_error()
+{
+	write(2, "Error\n", 7);
+	exit(EXIT_FAILURE);
+}
+
+void	exit_clean_error(t_stack **a, t_stack **b)
 {
 	if (a)
 		free_stack(a);
 	if (b)
 		free_stack(b);
-	write(2, "Error\n", 7);
-	exit(EXIT_FAILURE);
+	exit_error();
 }
 
 void	ft_print_output(t_stack *a)
@@ -43,7 +48,7 @@ int	main(int argc, char **argv)
 		return (0);
 	a = parse_input(argv, &a);
 	if (!a)
-		exit_error(&a, &b);
+		exit_clean_error(&a, &b);
 	sorting(&a, &b);
 	ft_print_output(a);
 

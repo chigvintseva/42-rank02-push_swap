@@ -24,7 +24,8 @@ typedef struct	s_stack
 	struct s_stack	*next;
 }	t_stack;
 
-void	exit_error(t_stack **a, t_stack **b);
+void	exit_error();
+void	exit_clean_error(t_stack **a, t_stack **b);
 // stack operations
 void	free_stack(t_stack **top);
 t_stack	*init_node(int value);
