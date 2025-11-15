@@ -19,6 +19,17 @@
 # include <unistd.h>
 # define CHUNKS_100 5
 # define CHUNKS_500 11
+
+typedef struct s_chunk_data
+{
+	int		*arr;
+	size_t	len;
+	size_t	min;
+	size_t	max;
+	size_t	chunk_size;
+	size_t	*pushed;
+}	t_chunk_data;
+
 typedef struct s_stack
 {
 	int				value;
@@ -67,10 +78,8 @@ void				stack_to_array(t_stack *a, int *arr, size_t len);
 void				insertion_sort(int *arr, size_t len);
 int					find_max(t_stack *b);
 size_t				find_value_index(t_stack *s, int value);
-void				push_chunks(t_stack **a, t_stack **b, int *arr, size_t len,
+void				push_chunks(t_stack **a, t_stack **b, int *arr,
 						size_t chunk_size);
-void				push_chunk(t_stack **a, t_stack **b, int *arr, size_t len,
-						size_t min, size_t max, size_t *pushed);
 void				rotate_b_to_max(t_stack **b, size_t idx, size_t b_len);
 void				push_back_sorted(t_stack **a, t_stack **b);
 void				turk_sort(t_stack **a, t_stack **b);

@@ -50,7 +50,7 @@ void	turk_sort(t_stack **a, t_stack **b)
 	chunk_size = len / chunks;
 	if (len % chunks != 0)
 		chunk_size++;
-	push_chunks(a, b, arr, len, chunk_size);
+	push_chunks(a, b, arr, chunk_size);
 	push_back_sorted(a, b);
 	bring_to_top(a, find_min(*a));
 }
