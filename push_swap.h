@@ -6,7 +6,7 @@
 /*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/19 16:58:06 by achigvin          #+#    #+#             */
-/*   Updated: 2025/11/15 14:47:17 by achigvin         ###   ########.fr       */
+/*   Updated: 2025/11/15 17:22:35 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <limits.h>
-
+# define CHUNKS_100 5
+# define CHUNKS_500 11
 typedef struct s_stack
 {
 	int				value;
@@ -62,6 +63,15 @@ void	sorting(t_stack **a, t_stack **b);
 int		find_target_value(t_stack *a, t_stack *b);
 size_t	find_index(t_stack *a, int target);
 void	bring_to_top(t_stack **a, int target);
-void	turk_sort(t_stack **a, t_stack **b);
+void  stack_to_array(t_stack *a, int *arr, size_t len);
+void  insertion_sort(int *arr, size_t len);
+int  find_max(t_stack *b);
+size_t find_value_index(t_stack *s, int value);
+void  push_chunks(t_stack **a, t_stack **b, int *arr, size_t len, size_t chunk_size);
+void  push_chunk(t_stack **a, t_stack **b, int *arr, size_t len, size_t min, size_t max, size_t *pushed);
+void  rotate_b_to_max(t_stack **b, size_t idx, size_t b_len);
+void  push_back_sorted(t_stack **a, t_stack **b);
+void turk_sort(t_stack **a, t_stack **b);
+
 
 #endif
