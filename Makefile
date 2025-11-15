@@ -29,6 +29,8 @@ SRC = ab_push.c \
 		sorting.c \
 		sorting_2_3.c \
 		stack_operations.c \
+		turk_sort_utils_01.c \
+		turk_sort_utils.c \
 		turk_sort.c \
 		parse_string.c
 
