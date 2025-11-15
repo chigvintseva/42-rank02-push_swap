@@ -39,7 +39,9 @@ void	sorting(t_stack **a, t_stack **b)
 		sort_2(a);
 	else if (length == 3)
 		sort_3(a);
-	else if (length > 3)
+	else if (length <= 5)
+		sort_5(a, b);
+	else if (length > 5)
 		turk_sort(a, b);
 	return ;
 }

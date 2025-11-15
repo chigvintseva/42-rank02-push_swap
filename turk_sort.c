@@ -31,16 +31,16 @@ void	push_back_sorted(t_stack **a, t_stack **b)
 void	turk_sort(t_stack **a, t_stack **b)
 {
 	size_t	len;
-	int		arr[500];
+	int		*arr;
 	size_t	chunks;
 	size_t	chunk_size;
 
 	len = stack_length(*a);
 	if (len <= 3)
-	{
-		sort_3(a);
-		return ;
-	}
+		return (sort_3(a));
+	arr = (int *)malloc(sizeof(int) * len);
+	if (!arr)
+		exit_clean_error(a, b);
 	stack_to_array(*a, arr, len);
 	insertion_sort(arr, len);
 	if (len <= 100)
@@ -51,6 +51,7 @@ void	turk_sort(t_stack **a, t_stack **b)
 	if (len % chunks != 0)
 		chunk_size++;
 	push_chunks(a, b, arr, chunk_size);
+	free(arr);
 	push_back_sorted(a, b);
 	bring_to_top(a, find_min(*a));
 }

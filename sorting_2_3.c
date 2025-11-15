@@ -48,3 +48,38 @@ void	sort_3(t_stack **a)
 		sa(a);
 	}
 }
+
+static void	rotate_min_to_top(t_stack **a, size_t pos, size_t size)
+{
+	if (pos <= size / 2)
+	{
+		while (pos--)
+			ra(a);
+	}
+	else
+	{
+		pos = size - pos;
+		while (pos--)
+			rra(a);
+	}
+}
+
+void	sort_5(t_stack **a, t_stack **b)
+{
+	size_t	pos;
+	size_t	size;
+	int		min_val;
+
+	size = stack_length(*a);
+	while (size > 3)
+	{
+		min_val = find_min(*a);
+		pos = find_min_index(*a, min_val);
+		rotate_min_to_top(a, pos, size);
+		pb(a, b);
+		size--;
+	}
+	sort_3(a);
+	while (*b)
+		pa(a, b);
+}

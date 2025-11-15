@@ -53,7 +53,7 @@ int	main(int argc, char **argv)
 	if (!a)
 		exit_clean_error(&a, &b);
 	sorting(&a, &b);
-	ft_print_output(a);
+	//ft_print_output(a);
 	free_stack(&a);
 	free_stack(&b);
 	return (0);
