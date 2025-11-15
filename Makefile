@@ -36,7 +36,7 @@ OBJ_DIR = objects_push_swap
 OBJ = $(addprefix $(OBJ_DIR)/,$(SRC:.c=.o))
 
 # -------- name rule --------
-all: $(NAME)
+all: $(LIBFT) $(NAME)
 
 # --------- main compilation-----------
 $(NAME): $(OBJ) $(LIBFT)
