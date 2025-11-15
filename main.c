@@ -6,7 +6,7 @@
 /*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/19 16:58:01 by achigvin          #+#    #+#             */
-/*   Updated: 2025/10/29 18:07:00 by achigvin         ###   ########.fr       */
+/*   Updated: 2025/11/15 14:06:50 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,15 @@ void	exit_clean_error(t_stack **a, t_stack **b)
 	exit_error();
 }
 
-void	ft_print_output(t_stack *a)
-{
-	while (a != NULL)
-	{
-		ft_printf("%d ", a->value);
-		a = a->next;
-	}
-	ft_printf("\n");
-}
+// void	ft_print_output(t_stack *a)
+// {
+// 	while (a != NULL)
+// 	{
+// 		ft_printf("%d ", a->value);
+// 		a = a->next;
+// 	}
+// 	ft_printf("\n");
+// }
 
 int	main(int argc, char **argv)
 {
@@ -50,8 +50,6 @@ int	main(int argc, char **argv)
 	if (!a)
 		exit_clean_error(&a, &b);
 	sorting(&a, &b);
-	ft_print_output(a);
-
 	free_stack(&a);
 	free_stack(&b);
 	return (0);
