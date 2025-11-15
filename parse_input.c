@@ -17,8 +17,10 @@ int	contains_only_digits(char *argv)
 	size_t	i;
 
 	i = 0;
-	if (argv[i] == '-')
+	if (argv[i] == '-' || argv[i] == '+')
 		i++;
+	if (!argv[i])
+		return (1);
 	while (argv[i])
 	{
 		if (argv[i] < '0' || argv[i] > '9')
