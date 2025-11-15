@@ -33,10 +33,20 @@ int	contains_only_digits(char *argv)
 int	check_input(char *argv)
 {
 	long	number;
+	size_t	i;
+	size_t	digits;
 
 	if (contains_only_digits(argv) == 0)
 		return (0);
-	if (ft_strlen(argv) > 11)
+	i = 0;
+	if (argv[i] == '-' || argv[i] == '+')
+		i++;
+	while (argv[i] == '0' && argv[i + 1] != '\0')
+		i++;
+	digits = 0;
+	while (argv[i + digits] >= '0' && argv[i + digits] <= '9')
+		digits++;
+	if (digits > 10)
 		return (0);
 	number = ft_atol(argv);
 	if (number > INT_MAX || number < INT_MIN)
@@ -55,6 +65,8 @@ t_stack	*parse_input(char **argv, t_stack **top)
 	i--;
 	while (i > 0)
 	{
+		if (ft_strlen(argv[i]) == 0)
+			return (free_stack(top), NULL);
 		if (check_input(argv[i]) == 0)
 			return (free_stack(top), NULL);
 		value = ft_atoi(argv[i]);
